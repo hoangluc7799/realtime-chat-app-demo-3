@@ -13,13 +13,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "../public")));
 
-app.get("/api/health", (req, res) => {
-    res.status(200).json({
-        success: true,
-        message: "Chat API is running"
-    });
-});
-
 app.use("/api/auth", authRoutes);
 app.use("/api/rooms", roomRoutes);
 
